@@ -1,0 +1,24 @@
+// ==UserScript==
+// @name         YouTube.com Redirect to YouTube TV (Direct Hash Navigation)
+// @namespace    http://tampermonkey.net/
+// @version      4.0
+// @description  Instantly open YouTube videos inside YouTube TV interface by modifying URL hash properly on first load.
+// @author       
+// @match        *://www.youtube.com/watch*
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    if (window.location.pathname.startsWith('/watch')) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const videoId = urlParams.get('v');
+
+        if (videoId) {
+            // Directly build the correct /tv#/watch URL
+            const tvUrl = `https://www.youtube.com/tv#/watch?v=${videoId}`;
+            window.location.replace(tvUrl);
+        }
+    }
+})();

@@ -1,0 +1,95 @@
+// ==UserScript==
+// @name         YouTube TV Auto-Login and Prevent Homepage Autoplay
+// @namespace    http://tampermonkey.net/
+// @version      10.0
+// @description  Always auto-press Enter on profile screen, but prevent autoplay if no video requested on YouTube TV homepage.
+// @author       
+// @match        *://www.youtube.com/tv*
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    let profileSelected = false;
+
+    function isVideoRequested() {
+        return location.href.includes('v=');
+    }
+
+    function simulateEnterKey() {
+        console.log('Simulating ENTER key...');
+        
+        const eventOptions = {
+            bubbles: true,
+            cancelable: true,
+            key: 'Enter',
+            code: 'Enter',
+            keyCode: 13,
+            which: 13
+        };
+
+        document.dispatchEvent(new KeyboardEvent('keydown', eventOptions));
+        document.dispatchEvent(new KeyboardEvent('keyup', eventOptions));
+    }
+
+    function simulateBackKey() {
+        console.log('Simulating BACK (Escape) key...');
+        
+        const eventOptions = {
+            bubbles: true,
+            cancelable: true,
+            key: 'Escape',
+            code: 'Escape',
+            keyCode: 27,
+            which: 27
+        };
+
+        document.dispatchEvent(new KeyboardEvent('keydown', eventOptions));
+        document.dispatchEvent(new KeyboardEvent('keyup', eventOptions));
+    }
+
+    function checkProfileScreen() {
+        const text = document.body.innerText.toLowerCase();
+        if (text.includes('watch as guest')) {
+            if (!profileSelected) {
+                console.log('Profile screen detected. Simulating Enter to select profile...');
+                setTimeout(simulateEnterKey, 1500);
+                profileSelected = true;
+
+                // After selecting profile, check for video
+                setTimeout(afterProfileSelected, 5000);
+            }
+        } else {
+            setTimeout(checkProfileScreen, 1000);
+        }
+    }
+
+    function afterProfileSelected() {
+        console.log('Checking if video was requested...');
+        if (!isVideoRequested()) {
+            console.log('No video in URL, preventing autoplay...');
+            setTimeout(simulateBackKey, 2000);
+        } else {
+            console.log('Video found in URL, no action needed.');
+        }
+    }
+
+    function onPageReady() {
+        console.log('Page ready. Checking for profile screen...');
+        checkProfileScreen();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', onPageReady);
+    } else {
+        onPageReady();
+    }
+
+    document.addEventListener('visibilitychange', function() {
+        if (document.visibilityState === 'visible') {
+            console.log('Tab active again, checking for profile screen...');
+            checkProfileScreen();
+        }
+    });
+})();
