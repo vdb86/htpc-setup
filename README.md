@@ -33,7 +33,7 @@ I switched to **Windows 11 Pro**, and even though it uses a bit more resources t
   If you want to use it:
   1. Edit `Flex.ps1` to fit your setup.
   2. Run it as-is or convert it to an `.exe`.  
-     See `Convert to exe.txt` for instructions.
+     See `Convert to exe.txt` for instructions (in the files folder).
 
 - **CEC support with Pulse-Eight adapter**  
   I installed a [Pulse-Eight USB CEC adapter](https://github.com/Pulse-Eight/libcec/releases/tag/libcec-7.0.0) and updated its drivers.  
@@ -49,6 +49,8 @@ I switched to **Windows 11 Pro**, and even though it uses a bit more resources t
 
   You usually don’t need to change the script, but **check file paths** to make sure they match your setup.
   The script is included in the files folder.
+  You can run it as-is or convert it to an `.exe`.  
+     See `Convert to exe.txt` for instructions (in the files folder).
 
 - **KDE Connect**  
   Installed [KDE Connect](https://kdeconnect.kde.org/) so I can send web pages from my phone to the HTPC. They open in the default browser (**Firefox** with **uBlock**).
