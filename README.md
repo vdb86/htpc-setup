@@ -60,8 +60,8 @@ I switched to **Windows 11 Pro**, and even though it uses a bit more resources t
   [YouTube for TV](https://addons.mozilla.org/en-US/firefox/addon/youtube-for-tv/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
 
   Then installed [Violentmonkey](https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/) and added two user scripts (I've included them in the files folder):
-  - Autologin
-  - Redirect
+  - Autologin - This selects the first profile in the login window and moves forward to the video.
+  - Redirect - This receives the normal YouTube link and redirects it to YouTube.com/tv.
 
   Now, when I send a YouTube video to the HTPC, it opens in `youtube.com/tv`.
 
