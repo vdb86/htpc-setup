@@ -47,7 +47,7 @@ I switched to **Windows 11 Pro**, and even though it uses a bit more resources t
   - Launches Kodi
   - Starts `CEC-Tray` after Kodi exits
 
-  I don't believe you don’t need to change the script as it's quite simple, but **check file paths** to make sure they match your setup.
+  I don't believe you need to change the script as it's quite simple, but **check file paths** to make sure they match your setup.
   The script is included in the files folder.
   You can run it as-is or convert it to an `.exe`.  
      See `Convert to exe.txt` for instructions (in the files folder).
