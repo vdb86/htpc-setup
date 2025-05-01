@@ -74,3 +74,5 @@ I switched to **Windows 11 Pro**, and even though it uses a bit more resources t
 
   ```cmd
   reg add "HKLM\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters" /v RequireSecuritySignature /t REG_DWORD /d 0 /f
+  ```
+  Then reboot. Transfer speeds will go back to normal.
