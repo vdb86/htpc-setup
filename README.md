@@ -20,51 +20,21 @@ I switched to **Windows 11 Pro**, and even though it uses a bit more resources t
   I limited the CPU to **3.4GHz** and installed [Fan Control](https://getfancontrol.com/) — this app is worth gold.  
   Huge thanks to Rémi Mercier: [https://github.com/Rem0o](https://github.com/Rem0o)
 
-- **[Flex Launcher](https://github.com/complexlogic/flex-launcher)**  
-  An excellent HTPC launcher with great configuration documentation.  
-  Big thanks to: [https://github.com/complexlogic](https://github.com/complexlogic)
-
-- **Focus script for Flex Launcher**  
-  Sometimes other apps would steal focus from Flex Launcher. I wrote a script (`Flex.ps1`) that runs in the background (low priority), checks every 30 seconds if Flex Launcher is running and focused, and restores focus if needed.  
-  Some apps launched from Flex are whitelisted to take focus.
-  The script is included in the files folder.
-
-  I converted the script to an `.exe`, so it starts automatically on boot.  
-  If you want to use it:
-  1. Edit `Flex.ps1` to fit your setup.
-  2. Run it as-is or convert it to an `.exe`.  
-     See `Convert to exe.txt` for instructions (in the files folder).
+- **[Launcher](https://github.com/vdb86/Launcher)**  
+  I created a launcher with many options and animated backgrounds.
+  Main idea behind it was to provide a xmb launcher experience.
+  It also has a screensaver functionality built in.
 
 - **CEC support with Pulse-Eight adapter**  
-  I installed a [Pulse-Eight USB CEC adapter](https://github.com/Pulse-Eight/libcec/releases/tag/libcec-7.0.0) and updated its drivers.  
-  If Kodi crashes on launch after this, just reinstall it — you won’t lose any data.
+  I installed a [Pulse-Eight USB CEC adapter](https://github.com/Pulse-Eight/libcec/releases/tag/libcec-7.0.0) and updated its drivers.
+  I then realized there's missing functionality so I created my own program CECHelper.
+  I still haven't gotten to getting it ready for GitHub
 
-- **CEC Tray behavior**  
-  After launching Kodi, `CEC-Tray` disappears from the taskbar — this is expected.  
-  Kodi uses the `libCEC` library exclusively, and only one application can access the adapter at a time.
-
-  I wrote a script (`StartKodi.ps1`) that:
-  - Launches Kodi
-  - Starts `CEC-Tray` after Kodi exits
-
-  I don't believe you need to change the script as it's quite simple, but **check file paths** to make sure they match your setup.
-  The script is included in the files folder.
-  You can run it as-is or convert it to an `.exe`.  
-     See `Convert to exe.txt` for instructions (in the files folder).
-
-- **KDE Connect**  
-  Installed [KDE Connect](https://kdeconnect.kde.org/) so I can send web pages from my phone to the HTPC. They open in the default browser (**Firefox** with **uBlock**).
-
-- **YouTube TV via browser**  
-  Installed this Firefox extension:  
-  [YouTube for TV](https://addons.mozilla.org/en-US/firefox/addon/youtube-for-tv/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
-
-  Then installed [Violentmonkey](https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/) and added two user scripts (I've included them in the files folder):
-  - Autologin - This selects the first profile in the login window and moves forward to the video.
-  - Redirect - This receives the normal YouTube link and redirects it to YouTube.com/tv.
-
-  Now, when I send a YouTube video to the HTPC, it opens in `youtube.com/tv`.
-
+- **YouTube**  
+  I created [Cathode](https://github.com/vdb86/Cathode) which allows you to access YouTube the same way SmartTube does on Android.
+  It's fully developed to work on Windows and to allow users to use it via remote control/controller.
+  I also wrote an android companion app - [Cathode remote](https://github.com/vdb86/Cathode-remote)
+  
 - **SMB transfer fix**  
   I noticed transfer speeds to my Synology NAS were slow (~16 MB/s).  
   After researching, I found the issue was caused by Windows 11 and fixed it by disabling security signature enforcement.  
