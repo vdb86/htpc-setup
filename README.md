@@ -4,7 +4,7 @@ Experience and tweaks for my HTPC
 
 I bought a **GB-BTIP-N250** to build an HTPC to replace my Raspberry Pi 4 (with LibreELEC and Docker), which started occasionally freezing after 4+ years of running 24/7.
 
-The initial idea was to run **Linux Mint**, but after 2 weeks of trying to get everything working, I was forced to give up — the drivers for the Intel N250 just aren't there yet. Maybe in 6 months or a year everything will work well.
+The initial idea was to run **Linux Mint**, but after 2 weeks of trying to get everything working, I was forced to give up - the drivers for the Intel N250 just aren't there yet. Maybe in 6 months or a year everything will work well.
 
 I switched to **Windows 11 Pro**, and even though it uses a bit more resources than Linux Mint, *everything works perfectly*.
 
@@ -16,8 +16,8 @@ I switched to **Windows 11 Pro**, and even though it uses a bit more resources t
   In case the HTPC reboots, it will fully boot up and start all necessary programs automatically.
 
 - **Fan control and CPU frequency**  
-  The fans on this mini PC can get quite annoying — there's no BIOS control for TDP, and the CPU gets hot fast, ramping up RPM aggressively.  
-  I limited the CPU to **3.4GHz** and installed [Fan Control](https://getfancontrol.com/) — this app is worth gold.  
+  The fans on this mini PC can get quite annoying - there's no BIOS control for TDP, and the CPU gets hot fast, ramping up RPM aggressively.  
+  I limited the CPU to **3.4GHz** and installed [Fan Control](https://getfancontrol.com/) - this app is worth gold.  
   Huge thanks to Rémi Mercier: [https://github.com/Rem0o](https://github.com/Rem0o)
 
 - **[Launcher](https://github.com/vdb86/Launcher)**  
